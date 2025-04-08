@@ -91,6 +91,18 @@ This will send today's attendance report every day at 18:00.
 
 ---
 
+## 🧠 How It Works
+
+1. **Face Dataset** is created by capturing face images with labels.
+2. **GUI starts webcam feed** and uses DeepFace to detect & recognize faces.
+3. **Attendance is logged** into a CSV file with timestamps and snapshots.
+4. **Reports can be viewed** via a GUI with filtering and charts.
+5. **Emails are sent** daily with the day's report at 18:00 using credentials from `.env`.
+
+DeepFace compares facial embeddings to identify matches using powerful backends like **Facenet, VGG-Face, ArcFace**, etc.
+
+---
+
 ## 📂 Project Structure
 ```
 face_recognition_attendance/
