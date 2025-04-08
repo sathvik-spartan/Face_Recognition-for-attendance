@@ -1,0 +1,8 @@
+opencv-python
+deepface
+pandas
+schedule
+python-dotenv
+matplotlib
+tk
+Pillow
