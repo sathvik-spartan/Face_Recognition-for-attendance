@@ -1,19 +1,125 @@
-# Folder Setup
+# 👁️‍🗨️ Face Recognition Attendance System
 
-face_recognition_attendance/    
-│    
-├── dataset/                         # Each subfolder = person name     
-│   ├── Alice/      
-│   │   ├── img1.jpg     
-│   │   └── img2.jpg     
-│   └── Bob/     
-│       └── bob1.jpg      
-│       
-├── snapshots/                       # Face snapshots saved on detection        
-├── attendance.csv                   # Logs all attendance       
-├── .env                             # For secure email
-├── gui_face_attendance.py           # ✅ DeepFace-based recognition GUI
-├── report_viewer.py       
-├── report_utils.py        
-├── scheduler.py                     # (Coming up)
-├── requirements.txt        
+A complete Python-based attendance system using DeepFace for face recognition, Tkinter GUI for real-time tracking and reporting, with automated daily email reports at 6:00 PM.
+
+---
+
+## 🚀 Features
+
+- 🎥 Real-time face detection with webcam
+- 🧠 DeepFace face recognition
+- 🗂️ Dataset builder via webcam capture
+- 📅 Attendance logging with date/time/snapshot
+- 📊 Report viewer with filters, charts, and Excel export
+- ✉️ Email reports (manual & scheduled)
+- ⏰ Auto-email scheduler at 18:00 (configurable)
+
+---
+
+## 🛠 Requirements
+
+Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+If you're on Linux and have issues with `tkinter`, try:
+```bash
+sudo apt-get install python3-tk
+```
+
+---
+
+## 🧪 1. Capture Face Dataset
+
+Run the face capture script:
+```bash
+python capture_faces.py
+```
+Instructions:
+- Enter person's name
+- Press `c` to capture face
+- Press `q` to quit
+
+Images will be saved to `dataset/Person_Name/`
+
+---
+
+## 🎦 2. Run Attendance GUI
+
+Launch the real-time face recognition system:
+```bash
+python gui_face_attendance.py
+```
+This will:
+- Detect faces
+- Match using DeepFace
+- Log attendance in `attendance.csv`
+- Save snapshots in `snapshots/`
+
+---
+
+## 📈 3. View Reports
+
+Open the report viewer GUI:
+```bash
+python report_viewer.py
+```
+Features:
+- Filter by name and date
+- Export to Excel
+- View charts (attendance per person)
+- Email filtered report manually
+
+---
+
+## 📬 4. Schedule Daily Report Email (18:00)
+
+### 🧾 Configure `.env`
+Create a file named `.env`:
+```env
+EMAIL_TO=receiver@example.com
+EMAIL_USER=you@example.com
+EMAIL_PASS=your_app_password
+```
+
+### 📆 Start Scheduler
+```bash
+python scheduler.py
+```
+This will send today's attendance report every day at 18:00.
+
+---
+
+## 📂 Project Structure
+```
+face_recognition_attendance/
+├── dataset/             # Face images by name
+├── snapshots/           # Captured attendance snapshots
+├── attendance.csv       # Attendance log
+├── .env                 # Email credentials
+├── capture_faces.py     # Dataset builder
+├── gui_face_attendance.py
+├── report_viewer.py     # Report GUI
+├── report_utils.py      # Charting + email logic
+├── scheduler.py         # Daily email script
+└── requirements.txt
+```
+
+---
+
+## 💡 Future Add-ons
+- 🌐 Flask/Django web dashboard
+- 📱 Mobile version or PWA
+- 📁 Cloud storage integration
+
+---
+
+## 📣 License
+Open-source for educational and non-commercial use.
+
+---
+
+## 🙌 Credits
+Built with 💙 using Python, DeepFace, Tkinter, and Matplotlib.
+
